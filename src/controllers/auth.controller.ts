@@ -89,3 +89,7 @@ export const loginUser = async(req:Request,res:Response,next:NextFunction)=>{
         next(error)
     }
 }
+
+export const verifySession=async(req:Request,res:Response,next:NextFunction)=>{
+  return res.status(200).json({message:"Session Verified"})
+}

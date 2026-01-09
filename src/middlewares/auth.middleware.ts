@@ -6,7 +6,7 @@ export const verifyJwt=(req:Request,res:Response,next:NextFunction)=>{
     try {
         const token = req.cookies.token
         if(!token){
-            return res.status(401).json({message:"Session"})
+            return res.status(401).json({message:"Token Missing"})
         }
         const payload=jwt.verify(token,process.env.JWT_SECRET as string) as AuthJwtPayload
         req.userPayload=payload
