@@ -6,6 +6,6 @@ export const hashPassword=async(pass:string)=>{
 }
 
 export const comparePassword=async(storedPass:string,userPass:string)=>{
-    const isPasswordCorrect=await bcrypt.compare(storedPass,userPass)
+    const isPasswordCorrect=await bcrypt.compare(userPass,storedPass)
     return isPasswordCorrect
 }
