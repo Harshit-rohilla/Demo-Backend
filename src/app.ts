@@ -4,10 +4,12 @@ import cors from "cors";
 import authRouter from "./routes/auth.routes";
 import userRouter from "./routes/user.routes";
 import { Request, Response, NextFunction } from "express";
+import dotenv from "dotenv";
+dotenv.config();
 
 
 const app = express();
-console.log(process.env.ORIGIN);
+console.log("printing origin: ",process.env.ORIGIN);
 
 
 // middlewares

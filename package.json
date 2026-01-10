@@ -4,7 +4,7 @@
   "description": "Backend for Demo App",
   "license": "ISC",
   "author": "Harshit",
-  "main": "index.js",
+  "main": "dist/server.js",
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
     "build": "tsc",
