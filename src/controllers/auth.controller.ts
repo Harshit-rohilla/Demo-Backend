@@ -91,5 +91,13 @@ export const loginUser = async(req:Request,res:Response,next:NextFunction)=>{
 }
 
 export const verifySession=async(req:Request,res:Response,next:NextFunction)=>{
-  return res.status(200).json({message:"Session Verified"})
+  return res.status(200).json({message:"Verified"})
+}
+
+export const logoutUser = async(req:Request,res:Response,next:NextFunction)=>{
+    try {
+        return res.status(200).clearCookie("token",cookieOption).json({message:"Logged out successfully"})
+    } catch (error) {
+        next(error)
+    }
 }
