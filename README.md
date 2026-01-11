@@ -5,7 +5,7 @@ This backend powers the demo tech platform by handling authentication, API routi
 
 ---
 
-## 🧠 Project Overview
+## Project Overview
 
 Key goals of this backend:
 - Clear project structure
@@ -17,7 +17,7 @@ The backend is deployable on **Render** and integrates seamlessly with frontend 
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 ### Core
 - **Node.js**
@@ -43,7 +43,7 @@ The backend is deployable on **Render** and integrates seamlessly with frontend 
 
 ---
 
-## 📦 Key Libraries & Why They Are Used
+## Key Libraries & Why They Are Used
 
 ### express
 Used as the core HTTP server framework.
@@ -95,3 +95,39 @@ Loads environment variables securely.
 - Supports multiple environments (dev / prod)
 
 ---
+
+## Security Measures (XSS & Injection Protection)
+
+The application uses multiple **well-known, actively maintained libraries** to protect against common web vulnerabilities such as **Cross-Site Scripting (XSS)** and **NoSQL injection**.
+
+---
+
+## HTTP Security Headers (Helmet)
+
+### Library Used
+- **helmet**
+
+### Why Helmet?
+Helmet helps secure the application by setting various HTTP headers that protect against:
+- Cross-Site Scripting (XSS)
+- Clickjacking
+- MIME-type sniffing
+- Unsafe browser behaviors
+
+### How it works
+Helmet automatically configures secure headers such as:
+- `Content-Security-Policy`
+- `X-Content-Type-Options`
+- `X-Frame-Options`
+
+These headers instruct the browser to block unsafe actions before they reach the application.
+
+## Cross-Site Scripting (XSS) Protection
+### Libraries Used
+
+dompurify
+jsdom
+
+How it works
+
+DOMPurify sanitizes user input by Removing script tags Stripping malicious HTMLRemoving. inline JavaScript handlers Returning safe plain text. This ensures that injected scripts never reach the frontend or database.

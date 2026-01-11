@@ -4,6 +4,7 @@ import cors from "cors";
 import authRouter from "./routes/auth.routes";
 import userRouter from "./routes/user.routes";
 import { Request, Response, NextFunction } from "express";
+import helmet from "helmet";
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -14,12 +15,11 @@ console.log("printing origin: ",process.env.ORIGIN);
 
 // middlewares
 app.use(cors({ origin:process.env.ORIGIN, credentials: true }));
-// app.options(/.*/, cors({
-//   origin: process.env.ORIGIN,
-//   credentials: true,
-// }));
 app.use(express.json({limit:"16kb"}));
 app.use(cookieParser());
+
+// prevent xss from header
+app.use(helmet());
 
 // routes
 app.use("/api/v1/auth",authRouter)
