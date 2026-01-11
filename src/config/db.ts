@@ -6,6 +6,6 @@ export const connectDB=async()=>{
         throw new Error("mongodb uri not available")
     }
     await mongoose.connect(URI)
-    console.log("DB Connected!");
+    // console.log("DB Connected!");
     
 }

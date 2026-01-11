@@ -9,7 +9,7 @@ const runServer=async()=>{
         app.listen(process.env.PORT||5000,()=>{console.log("app is running on port: ",process.env.PORT)})  
     } catch (error) {
         if(error instanceof Error){
-            console.log(error.message);
+            // console.log(error.message);
         }
         process.exit(1)
         

@@ -10,7 +10,7 @@ dotenv.config();
 
 
 const app = express();
-console.log("printing origin: ",process.env.ORIGIN);
+// console.log("printing origin: ",process.env.ORIGIN);
 
 
 // middlewares
@@ -28,7 +28,7 @@ app.use("/api/v1/user",userRouter)
 
 // Global error handler
 app.use((err:unknown,req:Request,res:Response,next:NextFunction)=>{
-    console.log("Error caught in global error handler: ",err);
+    // console.log("Error caught in global error handler: ",err);
     if(err instanceof Error){
         return res.status(500).json({message:err.message})
     }
